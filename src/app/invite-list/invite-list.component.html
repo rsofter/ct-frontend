@@ -1,0 +1,22 @@
+<h2>Invitation Results</h2>
+<p *ngIf="inviteErrors.length === 0 && successfulInvitesCount === 0">No Invitation Results</p>
+
+<div *ngIf="inviteErrors.length > 0">
+	<h3>Invitation Errors</h3>
+	<ul>
+		<li *ngFor="let error of inviteErrors">
+			{{error.errorMessage}}
+		</li>
+	</ul>
+</div>
+
+<div *ngIf="successfulInvitesCount > 0">
+	<h3>Successful Invitations</h3>
+	<p *ngIf="successfulInvitesCount > 1">
+		{{ successfulInvitesCount }} users successfully invited
+	</p>
+
+	<p *ngIf="successfulInvitesCount === 1">
+		One user successfully invited
+	</p>
+</div>
